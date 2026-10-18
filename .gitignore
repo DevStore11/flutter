@@ -42,3 +42,8 @@ local.properties
 # Ferramentas de IA - apenas locais
 .claude/
 .opencode/
+
+# Firebase: credenciais e configuração locais do bloco_notas
+/apps/mobile/bloco_notas/bloco-notas-app-017053e90195.json
+/apps/mobile/bloco_notas/google-services.json
+/apps/mobile/bloco_notas/google.md
