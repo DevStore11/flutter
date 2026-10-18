@@ -31,3 +31,34 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
+
+  compilar_apk:
+    needs: testar
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile/bloco_notas
+    steps:
+      - uses: actions/checkout@v4
+
+      # Java 21, igual ao usado localmente (Gradle 9.3.1 e AGP 9.1.0 exigem 17 ou superior)
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.47.0"
+          cache: true
+
+      - run: flutter pub get
+      - run: flutter build apk --debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bloco_notas-debug-apk
+          path: apps/mobile/bloco_notas/build/app/outputs/flutter-apk/app-debug.apk
+          retention-days: 14
+          if-no-files-found: error
