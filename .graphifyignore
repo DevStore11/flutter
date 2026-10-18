@@ -1,0 +1,17 @@
+﻿node_modules/
+dist/
+build/
+coverage/
+
+# Flutter (pastas de plataforma geradas poluem o grafo)
+apps/mobile/ios/
+apps/mobile/android/
+apps/mobile/windows/
+apps/mobile/linux/
+apps/mobile/macos/
+apps/mobile/.dart_tool/
+
+graphify-out/
+design/blender/
+design/assets/
+infrastructure/database/

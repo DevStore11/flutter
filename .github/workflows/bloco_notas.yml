@@ -1,0 +1,33 @@
+name: bloco_notas
+
+on:
+  push:
+    paths:
+      - "apps/mobile/bloco_notas/**"
+      - ".github/workflows/bloco_notas.yml"
+  pull_request:
+    paths:
+      - "apps/mobile/bloco_notas/**"
+      - ".github/workflows/bloco_notas.yml"
+  workflow_dispatch:
+
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/mobile/bloco_notas
+    steps:
+      - uses: actions/checkout@v4
+
+      # Versão fixada igual à usada localmente (Dart 3.13.0)
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.47.0"
+          cache: true
+
+      - run: flutter --version
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test

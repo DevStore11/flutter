@@ -1,0 +1,44 @@
+# Segredos e ambiente
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+serviceAccount*.json
+secrets/
+
+# Dependências e compilados
+node_modules/
+dist/
+build/
+coverage/
+
+# Ficheiros do sistema e do editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.log
+*.tmp
+*.swp
+
+# Graphify (mapa gerado)
+graphify-out/
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Flutter/Android: segurança extra
+*.jks
+*.keystore
+key.properties
+local.properties
+*.iml
+.gradle/
+
+# Ferramentas de IA - apenas locais
+.claude/
+.opencode/
