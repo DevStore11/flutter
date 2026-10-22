@@ -1,33 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:bloco_notas/app/apps.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PaginaPrincipal());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Bloco Notas')),
-        body: Column(
-          children:[
-            const Text('Resumo'),
-            const Text('Notas'),
-            const Text('Tarefas'),
-          ],
-        ),
-        bottomNavigationBar:const Row(
-          children:[
-            Text('Inicio'),
-            Text('Movimentos'),
-            Text('Perfil'),
-          ],
-        ),
-      ),
-    );
-  }
-}

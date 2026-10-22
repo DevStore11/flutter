@@ -4,7 +4,7 @@ import 'package:bloco_notas/main.dart';
 
 void main() {
   testWidgets('Mostra os textos principais da app', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const PaginaPrincipal());
 
     expect(find.text('Bloco Notas'), findsOneWidget);
     expect(find.text('Resumo'), findsOneWidget);
